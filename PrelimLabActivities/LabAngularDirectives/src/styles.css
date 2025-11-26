@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  color: white
+}
+
+body {
+  background-color: #202020;
+}
+
+nav ul {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: #d4d4d4;
+}
+
+nav ul::after{
+  content: ' ]';
+  font-weight: bolder;
+}
+ nav ul::before {
+  content: '[ ';
+  font-weight: bolder;
+}
