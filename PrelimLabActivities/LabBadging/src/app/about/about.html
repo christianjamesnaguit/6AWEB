@@ -1,0 +1,16 @@
+<div class="page-container">
+  <header class="page-header">
+    <h1>About The Epoch Foundation</h1>
+  </header>
+  <section class="page-content">
+    <img src="https://as2.ftcdn.net/jpg/01/89/39/77/1000_F_189397785_B8ZLb5xAQXYPCIbAAMsMxYZ2KP6HZvWa.jpg" alt="About conference" class="page-img" />
+    <p>The Epoch Foundation brings together industry leaders, innovators, and professionals from across the globe. Our mission is to foster collaboration, share knowledge, and create opportunities through world-class events.</p>
+    <button (click)="showMessage()">Show More</button>
+    <p *ngIf="message">{{ message }}</p>
+    <ul>
+      <li>Host and attend international conferences</li>
+      <li>Network with global professionals</li>
+      <li>Access exclusive resources and talks</li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,13 @@
+<div class="page-container">
+  <header class="page-header">
+    <h1>Our Global Partners</h1>
+  </header>
+  <section class="page-content">
+    <img src="https://thumbs.dreamstime.com/b/business-handshake-lofty-office-city-view-deal-struck-58912208.jpg" alt="Partners" class="page-img" />
+    <p *ngIf="partners.length; else noPartners">We collaborate with leading organizations and institutions worldwide to deliver impactful conferences.</p>
+    <ng-template #noPartners><p>No partners available.</p></ng-template>
+    <ul>
+      <li *ngFor="let partner of partners">{{ partner }}</li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,15 @@
+<div class="page-container">
+  <header class="page-header">
+    <h1>Join The Epoch Foundation</h1>
+  </header>
+  <section class="page-content">
+    <img src="https://t4.ftcdn.net/jpg/04/49/75/23/360_F_449752328_r4TeWFha21690lPh1I2xyvpiAaLghhdS.jpg" alt="conference img" class="page-img" />
+    <p>Become a part of our worldwide network. Sign up to receive updates and exclusive access to our international conferences!</p>
+    <form class="join-form" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Your Name" required [(ngModel)]="name" name="name" />
+      <input type="email" placeholder="Email Address" required [(ngModel)]="email" name="email" />
+      <button type="submit">Sign Up</button>
+    </form>
+    <p *ngIf="submitted">Welcome, {{ name }}! Conference updates will be sent to {{ email }}.</p>
+  </section>
+</div>
