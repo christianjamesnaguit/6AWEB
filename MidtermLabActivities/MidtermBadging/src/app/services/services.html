@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Services</h1>
+  <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearchTermChange($event)" placeholder="Search posts..." />
+  <div *ngIf="loading$ | async">Loading...</div>
+  <div *ngIf="error$ | async as error">Error: {{ error }}</div>
+  <ul>
+    <li *ngFor="let post of posts$ | async">
+      <strong>{{ post.id }}. {{ post.title | uppercase }}</strong><br>
+      <span>{{ post.body | truncate:60 }}</span>
+    </li>
+  </ul>
+</div>

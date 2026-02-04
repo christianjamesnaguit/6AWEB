@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Contact Us</h1>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <label>Name:</label>
+    <input type="text" name="name" [(ngModel)]="name" placeholder="Enter your name" required />
+    <br />
+    <label>Email:</label>
+    <input type="email" name="email" [(ngModel)]="email" placeholder="Enter your email" required />
+    <br />
+    <label>Message:</label>
+    <textarea name="message" [(ngModel)]="message" placeholder="Enter your message" required></textarea>
+    <br />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div *ngIf="submitted">
+    <h2>Form Preview</h2>
+    <p><strong>Name:</strong> {{ name | uppercase }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Message:</strong> {{ message | truncate:60 }}</p>
+  </div>
+</div>

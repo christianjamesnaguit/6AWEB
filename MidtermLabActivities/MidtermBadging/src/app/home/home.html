@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Home</h1>
+  <h2>Welcome!</h2>
+  <p>This portal is a midterm badging activity.</p>
+
+  <h2>Latest Update</h2>
+  <ul>
+    <li *ngFor="let post of posts$ | async | slice:0:5">
+      <strong>{{ post.title | uppercase }}</strong><br>
+      <span>{{ post.body | truncate:60 }}</span>
+    </li>
+  </ul>
+</div>
