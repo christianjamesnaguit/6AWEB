@@ -1,0 +1,126 @@
+/* Universal box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Container styling */
+.survey-form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* Form heading */
+.survey-form-container h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Inputs, selects, textarea */
+.input-box {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  display: block;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+/* Focus state */
+.input-box:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Label styling */
+label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #444;
+  font-size: 14px;
+}
+
+/* Error message styling */
+.error {
+  color: #d9534f;
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 0;
+  display: block;
+  font-weight: 600;
+}
+
+/* Button styling */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+.btn:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+
+/* Styling the div that contains the two inputs side by side */
+.survey-form-container > form > div[style*="display: flex"] {
+  margin-bottom: 12px;
+}
+
+/* For responsive spacing inside the flex container */
+.survey-form-container > form > div[style*="display: flex"] > input {
+  margin-bottom: 0;
+}
+
+/* Survey submitted box */
+.survey-submitted {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #e8f0fe;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.1);
+  border: 1px solid #4a90e2;
+}
+
+.survey-submitted h3 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #357abd;
+}
+
+.survey-submitted p {
+  margin: 6px 0;
+  font-size: 15px;
+}

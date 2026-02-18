@@ -1,0 +1,68 @@
+<div class="survey-form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Gambling Survey</h2>
+    <div style="display: flex; gap: 10px;">
+      <input class="input-box" style="flex:1;" placeholder="Name" formControlName="name" />
+      <input class="input-box" style="flex:1;" type="number" placeholder="Age" formControlName="age" />
+    </div>
+    <div *ngIf="isInvalid('name')">
+      <small class="error">Name is required.</small>
+    </div>
+    <div *ngIf="isInvalid('age')">
+      <small class="error">Age is required and must be 18 or older.</small>
+    </div>
+
+    <label style="margin-top: 10px;">How often do you gamble?</label>
+    <select class="input-box" formControlName="frequency">
+      <option value="" disabled selected>Select frequency</option>
+      <option value="Never">Never</option>
+      <option value="Rarely">Rarely</option>
+      <option value="Sometimes">Sometimes</option>
+      <option value="Often">Often</option>
+      <option value="Very Often">Very Often</option>
+    </select>
+    <div *ngIf="isInvalid('frequency')">
+      <small class="error">Frequency is required.</small>
+    </div>
+
+    <label style="margin-top: 10px;">What type of gambling do you participate in?</label>
+    <select class="input-box" formControlName="type">
+      <option value="" disabled selected>Select type</option>
+      <option value="Lottery">Lottery</option>
+      <option value="Casino">Casino</option>
+      <option value="Sports Betting">Sports Betting</option>
+      <option value="Online Gambling">Online Gambling</option>
+      <option value="Other">Other</option>
+    </select>
+    <div *ngIf="isInvalid('type')">
+      <small class="error">Type is required.</small>
+    </div>
+
+    <label style="margin-top: 10px;">What is your main reason for gambling?</label>
+    <select class="input-box" formControlName="reason">
+      <option value="" disabled selected>Select reason</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Social">Social</option>
+      <option value="Financial Gain">Financial Gain</option>
+      <option value="Habit">Habit</option>
+      <option value="Other">Other</option>
+    </select>
+    <div *ngIf="isInvalid('reason')">
+      <small class="error">Reason is required.</small>
+    </div>
+
+    <textarea class="input-box" rows="3" placeholder="Additional comments (optional)" formControlName="comments"></textarea>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
+
+<div class="survey-submitted">
+  <h3>Survey Submitted!</h3>
+  <p><strong>Name:</strong> {{submittedData.name}}</p>
+  <p><strong>Age:</strong> {{submittedData.age}}</p>
+  <p><strong>Frequency:</strong> {{submittedData.frequency}}</p>
+  <p><strong>Type:</strong> {{submittedData.type}}</p>
+  <p><strong>Reason:</strong> {{submittedData.reason}}</p>
+  <p><strong>Comments:</strong> {{submittedData.comments}}</p>
+</div>

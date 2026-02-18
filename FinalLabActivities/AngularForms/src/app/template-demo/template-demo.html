@@ -1,0 +1,50 @@
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <input class="input-box" type="text" name="username" [(ngModel)]="username" placeholder="enter username" required/>
+  <input class="input-box" type="email" name="email" [(ngModel)]="email" placeholder="enter email" required email/>
+  <input class="input-box" type="password" name="password" [(ngModel)]="password" placeholder="enter password" required minlength="6"/>
+  <select class="input-box" name="role" [(ngModel)]="role" required>
+    <option value="" disabled [selected]="role === ''">select role</option>
+    <option value="admin">admin</option>
+    <option value="user">user</option>
+    <option value="guest">guest</option>
+  </select>
+  <div class="radio-group">
+    <label>Gender:</label>
+    <label>
+      <input type="radio" name="gender" value="male" [(ngModel)]="gender" required />
+      Male
+    </label>
+    <label>
+      <input type="radio" name="gender" value="female" [(ngModel)]="gender" />
+      Female
+    </label>
+  </div>
+  <div class="radio-group">
+    <label>Status:</label>
+    <label>
+      <input type="radio" name="status" value="permanent" [(ngModel)]="status" required />
+      Permanent
+    </label>
+    <label>
+      <input type="radio" name="status" value="probationary" [(ngModel)]="status" />
+      Probationary
+    </label>
+  </div>
+  <textarea class="input-box"
+            name="comments"
+            [(ngModel)]="comments"
+            placeholder="Enter comments or notes"
+            rows="4">
+  </textarea>
+  <input class="btn" type="submit" value="submit" [disabled]="!myForm.valid"/>
+</form>
+
+<div class="form-submitted">
+  <h3>Form Submitted!</h3>
+  <p><strong>Username:</strong> {{submittedData.username}}</p>
+  <p><strong>Email:</strong> {{submittedData.email}}</p>
+  <p><strong>Role:</strong> {{submittedData.role}}</p>
+  <p><strong>Gender:</strong> {{submittedData.gender}}</p>
+  <p><strong>Status:</strong> {{submittedData.status}}</p>
+  <p><strong>Comments:</strong> {{submittedData.comments}}</p>
+</div>

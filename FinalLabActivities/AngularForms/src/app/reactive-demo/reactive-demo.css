@@ -1,0 +1,131 @@
+/* Universal box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Form container */
+form {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Inputs, select, textarea */
+.input,
+select.input,
+textarea.input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  display: block;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Focus state */
+.input:focus,
+select.input:focus,
+textarea.input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Radio group container */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Label for the radio group title */
+.radio-group > label:first-child {
+  font-weight: 600;
+  min-width: 70px;
+}
+
+/* Each radio option label */
+.radio-group label:not(:first-child) {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Button styling */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+.btn:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+
+/* Highlight invalid inputs for reactive forms */
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid {
+  border-color: #d9534f;
+  box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+}
+
+/* Error messages */
+.error {
+  color: #d9534f;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  display: block;
+  font-weight: 600;
+}
+
+/* Submitted data container */
+div[style*="margin-top: 2em"] {
+  max-width: 450px;
+  margin: 30px auto 60px;
+  padding: 20px;
+  background: #e8f0fe;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  box-shadow: 0 3px 10px rgba(74, 144, 226, 0.2);
+}
+
+div[style*="margin-top: 2em"] h3 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #2a4d9b;
+}
+
+div[style*="margin-top: 2em"] p {
+  margin: 6px 0;
+  font-size: 14px;
+}
