@@ -1,0 +1,40 @@
+<p>Books Application</p>
+
+<div class="form-container">
+  <input id="newBook" placeholder="Title">
+  <input id="newDesc" placeholder="Description">
+  <input id="newPrice" placeholder="Book Price">
+  <input id="newAuthor" placeholder="Author">
+  <input id="newYear" placeholder="Year" type="number">
+  <button (click)="addBook()">Add book</button>
+</div>
+
+<table class="books-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Author</th>
+      <th>Year</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (book of books; track book._id) {
+      <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.desc }}</td>
+        <td>₱{{ book.price }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.year }}</td>
+        <td><button (click)="deleteBook(book._id)">Delete book</button></td>
+      </tr>
+    } @empty {
+      <tr><td colspan="6">No books available</td></tr>
+    }
+  </tbody>
+</table>
+
+<router-outlet />
+

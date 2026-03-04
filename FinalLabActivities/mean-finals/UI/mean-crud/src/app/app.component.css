@@ -1,0 +1,111 @@
+/* Modern, clean layout for the CRUD app */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.form-container input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.form-container button {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.form-container button:hover {
+  background: #0056b3;
+}
+.books-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.book-item {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 2fr 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.book-title {
+  font-weight: bold;
+  color: #333;
+}
+.book-desc, .book-price, .book-author, .book-year {
+  color: #555;
+}
+.book-item button {
+  margin-left: auto;
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.book-item button:hover {
+  background: #a71d2a;
+}
+.book-header {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 2fr 1fr auto;
+  font-weight: bold;
+  background: #e9ecef;
+  border-bottom: 2px solid #dee2e6;
+  padding: 0.75rem 1rem;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.book-header span {
+  color: #222;
+}
+.books-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.books-table th, .books-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+.books-table th {
+  background: #e9ecef;
+  font-weight: bold;
+  color: #222;
+}
+.books-table tr:last-child td {
+  border-bottom: none;
+}
+.books-table td button {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.books-table td button:hover {
+  background: #a71d2a;
+}
